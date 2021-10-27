@@ -30,8 +30,5 @@
     },
     "dependencies": {
         "vue2-editor": "^2.10.2"
-    },
-    "engines": {
-        "node": "14.x"
     }
 }
