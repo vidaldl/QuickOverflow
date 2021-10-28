@@ -1,0 +1,7 @@
+{
+    "name": "QuickOverflow",
+    "description": "A barebones Node.js app using Express",
+    "repository": "https://github.com/vidaldl/QuickOverflow",
+    "logo": "https://node-js-sample.herokuapp.com/node.png",
+    "keywords": ["Vue", "Laravel", "Collaboration"]
+}
