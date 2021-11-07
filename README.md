@@ -161,7 +161,8 @@ _Below is an example of how you can instruct your audience on installing and set
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+QuickOverflow is an app/ website made to function as a forum for developers, in the same manner as other sites like Reddit or Stackoverflow. 
+The way we submit a question is we first create a login for the site, then after that we click on the big green button that says "ask a question". You then want to type your question into the text box there, and you are able to submit your question to be seen by users on the app. Other users can then answer the question, whether it be a coding problem or a basic question, others can help you out. You can also see your posts from before, and whether they have been answered or not.
 
 _For more examples, please refer to the [Documentation](https://example.com)_
 
