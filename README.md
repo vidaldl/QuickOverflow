@@ -1,8 +1,3 @@
-<a target="_blank" href="https://heroku.com/deploy?template=https://github.com/vidaldl/QuickOverflow">
-  <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy">
-</a>
-
-
 
 <div id="top"></div>
 <!--
@@ -47,11 +42,11 @@
     <a href="https://github.com/othneildrew/Best-README-Template"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/othneildrew/Best-README-Template">View Demo</a>
+    <a href="http://quickoverflow.herokuapp.com/">View Demo</a>
     ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">Report Bug</a>
+    <a href="https://github.com/vidaldl/QuickOverflow/issues">Report Bug</a>
     ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">Request Feature</a>
+    <a href="https://github.com/vidaldl/QuickOverflow/issues">Request Feature</a>
   </p>
 </div>
 
@@ -105,8 +100,6 @@ Here's what's great about it:
 This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
 
 * [Vue.js](https://vuejs.org/)
-* [Angular](https://angular.io/)
-* [Svelte](https://svelte.dev/)
 * [Laravel](https://laravel.com)
 * [Bootstrap](https://getbootstrap.com)
 * [JQuery](https://jquery.com)
@@ -118,30 +111,53 @@ This section should list any major frameworks/libraries used to bootstrap your p
 <!-- GETTING STARTED -->
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+This are the steps required for deployment on Heroku which is a free service where you can easily work with a small team of up to 20 people without paying a dime.
 
 ### Prerequisites
 
 This is an example of how to list things you need to use the software and how to install them.
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
+* GitHub account -> [https://github.com](https://github.com)
+* Heroku account -> [https://heroku.com/](https://heroku.com/)
 
 ### Installation
 
-_Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
+_Below are the steps to deploy the app using Heroku. Of course you are free to clone this project and deploy it to any server of your choosing._
 
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
+
+#### I. Create a repository on your GitHub account.
+1. Go to GitHub and create a new empty repository.
+2. Once the repository is created click on "Import code" and paste: 
    ```sh
-   git clone https://github.com/your_username_/Project-Name.git
+   https://github.com/vidaldl/QuickOverflow
    ```
-3. Install NPM packages
-   ```sh
-   npm install
-   ```
+3. Click on "Begin import".
+   
+   
+
+#### II. Creating the Heroku App
+1. Click on the "Deploy to Heroku" button down below. <br /><a target="_blank" href="https://heroku.com/deploy?template=https://github.com/vidaldl/QuickOverflow"><img src="https://www.herokucdn.com/deploy/button.svg" style="margin-right: 30px;" alt="Deploy"></a>
+2. Choose a name for the app and click on "Deploy App".
+3. Once the app is done deploying click on "Manage App".
+4. Navigate to "Deploy" and select "GitHub" under "Deployment method"
+5. Click on Connect to GitHub(If you've never connected your Heroku account to GitHub in the past)
+7. Click on connect to the right of the repository you searched for.
+8. go to settings -> buildpacks -> Click on "Add Buildpack" -> Select "nodejs" -> Click on "Save Changes"
+9. navigate to your Heroku App and to Settings -> Click on "Reveal Config Vars"
+10. Add the following vars (Values in quotes("") can be customized):
+    ```
+    APP_DEBUG => false
+    APP_ENV => "production"
+    APP_NAME => YourCustomAppName
+    APP_URL => (The URL you get when clicking "Open App" on Heroku App Settings)
+    ```
+  
+  
+#### III. Configuring the App Key
+1. Go to More -> Run console, and paste the following:
+    ```sh
+    php artisan key:generate --show
+    ```
+   
 4. Enter your API in `config.js`
    ```js
    const API_KEY = 'ENTER YOUR API';
