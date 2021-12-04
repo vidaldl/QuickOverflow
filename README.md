@@ -157,11 +157,37 @@ _Below are the steps to deploy the app using Heroku. Of course you are free to c
     ```sh
     php artisan key:generate --show
     ```
-   
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
+2. Copy the line that starts with base64:... 
+3. Navigate to Settings -> On Config Vars click on Reveal Config Vars -> Add a new Config Var:
    ```
+   APP_KEY => Value Paste the base64:... line.
+   ```
+
+
+#### IV. Setup Database and Config Vars
+1. Navigate to resources -> search for "Heroku Postgres" -> Select plan -> Submit Order Form.
+2. Navigate to Resources and click on "Heroku Postgres".
+3. In the new page that opens up Navigate to Settings.
+4. Under Database Credentials click on "View Credentials"
+5. With the information now displaying navigate to your Heroku App and to Settings -> Click on "Reveal Config Vars".
+6. Add the following vars (The values of these vars are from the "View Credentials" on the "Heroku Postgres" resource):
+    ```
+    DATABASE_URL => URI (THIS ONE IS AUTOMATICALLY CREATED)
+    DB_CONNECTION => pgsql
+    DB_DATABASE => Database(value on "View Credentials" page)
+    DB_HOST => Host(value on "View Credentials" page)
+    DB_PASSWORD => Password(value on "View Credentials" page)
+    DB_PORT => Port(value on "View Credentials" page)
+    DB_USERNAME => User(value on "View Credentials" page)
+    ```
+7. go to More -> Run console, and paste the following "php artisan migrate --seed" (This will create the database and put some dummy data in)
+8. input "yes" when prompted.
+
+
+#### V. Manually Deploy
+1. Navigate to Deploy -> Select "master" under "Manual deploy" and click on "Deploy Branch"
+
+
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -173,42 +199,6 @@ _Below are the steps to deploy the app using Heroku. Of course you are free to c
 QuickOverflow is an app/ website made to function as a forum for developers, in the same manner as other sites like Reddit or Stackoverflow. 
 The way we submit a question is we first create a login for the site, then after that we click on the big green button that says "ask a question". You then want to type your question into the text box there, and you are able to submit your question to be seen by users on the app. Other users can then answer the question, whether it be a coding problem or a basic question, others can help you out. You can also see your posts from before, and whether they have been answered or not.
 
-_For more examples, please refer to the [Documentation](https://example.com)_
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-
-
-<!-- ROADMAP -->
-## Roadmap
-
-- [x] Add Changelog
-- [x] Add back to top links
-- [] Add Additional Templates w/ Examples
-- [] Add "components" document to easily copy & paste sections of the readme
-- [] Multi-language Support
-    - [] Chinese
-    - [] Spanish
-
-See the [open issues](https://github.com/othneildrew/Best-README-Template/issues) for a full list of proposed features (and known issues).
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-
-
-<!-- CONTRIBUTING -->
-## Contributing
-
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
-
-If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
-Don't forget to give the project a star! Thanks again!
-
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -226,46 +216,10 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@your_twitter](https://twitter.com/your_username) - email@example.com
+David Vidal - vidaldl@outlook.com
 
-Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-
-
-<!-- ACKNOWLEDGMENTS -->
-## Acknowledgments
-
-Use this space to list resources you find helpful and would like to give credit to. I've included a few of my favorites to kick things off!
-
-* [Choose an Open Source License](https://choosealicense.com)
-* [GitHub Emoji Cheat Sheet](https://www.webpagefx.com/tools/emoji-cheat-sheet)
-* [Malven's Flexbox Cheatsheet](https://flexbox.malven.co/)
-* [Malven's Grid Cheatsheet](https://grid.malven.co/)
-* [Img Shields](https://shields.io)
-* [GitHub Pages](https://pages.github.com)
-* [Font Awesome](https://fontawesome.com)
-* [React Icons](https://react-icons.github.io/react-icons/search)
+Project Link: [https://github.com/vidaldl/QuickOverflow](https://github.com/vidaldl/QuickOverflow)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
-
-
-
-<!-- MARKDOWN LINKS & IMAGES -->
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=for-the-badge
-[contributors-url]: https://github.com/othneildrew/Best-README-Template/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/othneildrew/Best-README-Template.svg?style=for-the-badge
-[forks-url]: https://github.com/othneildrew/Best-README-Template/network/members
-[stars-shield]: https://img.shields.io/github/stars/othneildrew/Best-README-Template.svg?style=for-the-badge
-[stars-url]: https://github.com/othneildrew/Best-README-Template/stargazers
-[issues-shield]: https://img.shields.io/github/issues/othneildrew/Best-README-Template.svg?style=for-the-badge
-[issues-url]: https://github.com/othneildrew/Best-README-Template/issues
-[license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge
-[license-url]: https://github.com/othneildrew/Best-README-Template/blob/master/LICENSE.txt
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/othneildrew
-[product-screenshot]: images/screenshot.png
 
 
