@@ -7,7 +7,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="https://github.com/vidaldl/QuickOverflow/blob/master/public/img/logo.png?raw=true" alt="Logo" width="300">
+    <img src="https://github.com/vidaldl/QuickOverflow/blob/master/public/img/quickOverflow%20-%20logo.png?raw=true" alt="Logo" width="300">
   </a>
 
   <h3 align="center">Quick Overflow</h3>
